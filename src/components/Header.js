@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 
+/*
+  This Class responsible for the header of the main page
+*/
+
 class HeaderComponent extends Component {
 
   render() {

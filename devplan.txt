@@ -1,0 +1,15 @@
+#1) Breakdown the project into components
+  - Header Component : [Title]
+  - Shelf Component : [Shelf Title ex: Currently Reading, Want to read, etc]
+    - Book Component : [BookImage, Title, Description]
+      - Option Component : [Move to functionality from one shelf to another]
+  - Add Component : [Go to Search Page]
+
+  /search Page
+  - SearchForm Component : [Input field and search button]
+  - BookList Component : [Contains list of Book Component] 
+    - Book Component
+
+#2) Setup Router
+
+#3)

@@ -10,7 +10,13 @@ class Book extends Component {
       <li>
                         <div className="book">
                           <div className="book-top">
+                          
+                          { // Check if the book had image link or not.
+                            this.props.book.imageLinks ?
                             <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${this.props.book.imageLinks.thumbnail})` }}></div>
+                          :
+                          null
+                          }  
                             <div className="book-shelf-changer">
                               <select onChange={this.selectedValue}>
                                 <option value="move" disabled>Move to...</option>

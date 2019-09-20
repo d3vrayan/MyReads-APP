@@ -1,21 +1,33 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import Book from './Book';
 import {search} from '../BooksAPI';
-import {Link} from 'react-router-dom';
 
 class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {books: []};
-
     this.searchBook = this.searchBook.bind(this);
   }
   searchBook = (e) => {
     if(!e.target.value) return null;
-
+    
     search(e.target.value).then(data => {
+      data = this.assignShelf(data);
       this.setState({books: data})
+      console.log(data)
     })
+
+  }
+
+  // This function to assign shelf value for exist book in shelf
+  assignShelf = (data) => {
+    data.map(d => 
+      this.props.books.filter(book => book.title === d.title).map(obj => 
+        d.shelf = obj.shelf
+      )
+    )
+    return data;
   }
   render() {
     return (

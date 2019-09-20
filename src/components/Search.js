@@ -16,7 +16,9 @@ class Search extends Component {
       data = this.assignShelf(data);
       this.setState({books: data})
       console.log(data)
-    })
+    }).catch(err => 
+      this.setState({books: []})
+      )
 
   }
 
